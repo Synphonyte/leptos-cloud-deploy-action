@@ -1,0 +1,10 @@
+[package]
+name = "leptos-cloud-deploy-action"
+description = "Deploys your app to Leptos Cloud"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.67"
+
+[dependencies]
+leptos-cloud-deploy = { path = "../leptos-cloud/leptos-cloud-deploy" }
+tokio = "1.40.0"
