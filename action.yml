@@ -10,6 +10,10 @@ inputs:
     description: 'The GitHub token to use for downloading the action, defaults to workflow token'
     required: true
     default: ${{ github.token }}
+  api-token:
+    description: 'The Leptos Cloud API token to use for deploying'
+    required: true
+    default: ${{ secrets.LEPTOS_CLOUD_TOKEN }}
   cloud-config-file:
     description: 'The path to the leptos-cloud.toml to use'
     required: false
@@ -57,4 +61,4 @@ runs:
     - name: Run Action
       shell: bash
       id: run
-      run: ./${{ runner.os }}/${{ env.binary_name }} "${{ inputs.error }}" "${{ inputs.token }}" "${{ inputs.cloud-config-file }}"
+      run: ./${{ runner.os }}/${{ env.binary_name }} "${{ inputs.error }}" "${{ inputs.api-token }}" "${{ inputs.cloud-config-file }}"
